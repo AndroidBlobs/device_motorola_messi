@@ -364,7 +364,7 @@ set_ro_hw_properties()
 	for hwtag in $(find $hw_mp -name '.system'); do
 		debug "path $hwtag has '.system' in its name"
 		prop_prefix=$(cat $hwtag/ascii)
-		verify=${prop_prefix%.}
+		verify=${prefix%.}
 		# esure property ends with '.'
 		if [ "$prop_prefix" == "$verify" ]; then
 			prop_prefix="$prop_prefix."

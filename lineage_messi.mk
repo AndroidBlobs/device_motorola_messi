@@ -12,12 +12,12 @@ PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := messi
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_NAME := lineage_messi
-PRODUCT_MODEL := XT1929-15
+PRODUCT_MODEL := moto z3
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 TARGET_VENDOR := motorola
 TARGET_VENDOR_PRODUCT_NAME := messi
-PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC=" 9 PCX29.10-33 60ac6 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC=" 9 PDX29.84-51 b464a release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := 9/PCX29.10-33/60ac6:user/release-keys
+BUILD_FINGERPRINT := 9/PDX29.84-51/b464a:user/release-keys

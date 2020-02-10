@@ -1,2 +1,2 @@
 require version-baseband=2.5.c1.3-00091-8998_GEN_PACK-2
-require version-vendor=1569011424
+require version-vendor=1571639144

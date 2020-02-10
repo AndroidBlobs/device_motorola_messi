@@ -27,11 +27,11 @@ on early-init
 
 on boot
     # Change ownership and permission for AMPS factory testing
-    chown root vendor_tcmd /sys/devices/soc/a800000.ssusb/modusb_enable
+    chown root mot_tcmd /sys/devices/soc/a800000.ssusb/modusb_enable
     chmod 0660 /sys/devices/soc/a800000.ssusb/modusb_enable
-    chown root vendor_tcmd /sys/class/i2c-adapter/i2c-7/7-0072/irq_enable
+    chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-0072/irq_enable
     chmod 0660 /sys/class/i2c-adapter/i2c-7/7-0072/irq_enable
-    chown root vendor_tcmd /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
+    chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
     chmod 0660 /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
 
     start ufs_ffu

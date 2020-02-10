@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2015, 2017-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2015, 2017-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -58,8 +58,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/dpl_ctrl             0660   usb        usb
 /dev/ipa_odl_ctl          0660   radio      radio
 /dev/ipa_adpl             0660   system     oem_2905
-/dev/hab                  0666   system     system
-/dev/synx_device          0660   root       camera
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -143,7 +141,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/sec_nvm_*            0660   system     system
 /dev/cryptoapp            0660   system     system
 /dev/spdaemon_ssr         0660   system     system
-/dev/cam-hyp-intf*        0660   system     camera
 /dev/gemini0              0660   system     camera
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
@@ -217,7 +214,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/i2c-5                0660   media       media
 /dev/avtimer              0660   system     audio
 /dev/spidev2.0            0660   system     audio
-/dev/cpu_dma_latency      0660   system     audio
 
 # DVB devices
 /dev/dvb/adapter0/demux*  0440   media       media
@@ -397,40 +393,40 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/i2c-*                0660   system     system
 
 #JOT fixture devices for AMPS factory testing
-/dev/hidraw0              0660   root       vendor_tcmd
-/dev/hidraw1              0660   root       vendor_tcmd
+/dev/hidraw0              0660   root       mot_tcmd
+/dev/hidraw1              0660   root       mot_tcmd
 
 # MOD device
-/sys/devices/soc/75b5000.i2c/i2c-7/7-0072 irq_enable 0660 vendor_tcmd vendor_tcmd
-/sys/devices/soc/0.apba_ctrl apba_enable 0660 vendor_tcmd vendor_mod
-/sys/devices/soc/0.apba_ctrl apba_mode 0660 vendor_tcmd vendor_mod
-/sys/devices/soc/0.apba_ctrl flash_partition 0220 vendor_tcmd vendor_mod
-/sys/devices/soc/0.apba_ctrl unipro_mid 0440 root vendor_mod
-/sys/devices/soc/0.apba_ctrl unipro_pid 0440 root vendor_mod
-/sys/devices/soc/0.apba_ctrl vid 0440 root vendor_mod
-/sys/devices/soc/0.apba_ctrl pid 0440 root vendor_mod
-/sys/devices/soc/0.apba_ctrl fw_version 0440 root vendor_mod
-/sys/devices/soc/0.apba_ctrl fw_version_str 0440 root vendor_mod
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* hotplug 0660 root vendor_mod
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* uevent 0660 root vendor_mod
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* current_limit 0220 root vendor_mod
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* rtc_sync 0220 root vendor_mod
-/sys/devices/soc/soc:muc_svc@0 flashmode 0660 root vendor_mod
-/sys/devices/soc/soc:muc_svc@0 reset 0660 root vendor_mod
-/sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces/* hotplug 0660 root vendor_mod
-/sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces/* uevent 0660 root vendor_mod
-/sys/devices/soc/0.muc/0.muc:muc_svc@0 flashmode 0660 root vendor_mod
-/sys/devices/platform/mods_ap uevent 0660 root vendor_mod
-/sys/devices/platform/mods_ap/* uevent 0660 root vendor_mod
-/sys/devices/platform/mods_ap/greybus1 uevent 0664 root vendor_mod
+/sys/devices/soc/75b5000.i2c/i2c-7/7-0072 irq_enable 0660 mot_tcmd mot_tcmd
+/sys/devices/soc/0.apba_ctrl apba_enable 0660 mot_tcmd mot_mod
+/sys/devices/soc/0.apba_ctrl apba_mode 0660 mot_tcmd mot_mod
+/sys/devices/soc/0.apba_ctrl flash_partition 0220 mot_tcmd mot_mod
+/sys/devices/soc/0.apba_ctrl unipro_mid 0440 root mot_mod
+/sys/devices/soc/0.apba_ctrl unipro_pid 0440 root mot_mod
+/sys/devices/soc/0.apba_ctrl vid 0440 root mot_mod
+/sys/devices/soc/0.apba_ctrl pid 0440 root mot_mod
+/sys/devices/soc/0.apba_ctrl fw_version 0440 root mot_mod
+/sys/devices/soc/0.apba_ctrl fw_version_str 0440 root mot_mod
+/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* hotplug 0660 root mot_mod
+/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* uevent 0660 root mot_mod
+/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* current_limit 0220 root mot_mod
+/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* rtc_sync 0220 root mot_mod
+/sys/devices/soc/soc:muc_svc@0 flashmode 0660 root mot_mod
+/sys/devices/soc/soc:muc_svc@0 reset 0660 root mot_mod
+/sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces/* hotplug 0660 root mot_mod
+/sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces/* uevent 0660 root mot_mod
+/sys/devices/soc/0.muc/0.muc:muc_svc@0 flashmode 0660 root mot_mod
+/sys/devices/platform/mods_ap uevent 0660 root mot_mod
+/sys/devices/platform/mods_ap/* uevent 0660 root mot_mod
+/sys/devices/platform/mods_ap/greybus1 uevent 0664 root mot_mod
 
 # MOD display device
-/sys/devices/platform/mods_ap/greybus1/*/*/display/display* state 0660 root vendor_mod
-/sys/devices/platform/mods_ap/greybus1/*/*/display/display* config 0444 root vendor_mod
-/sys/devices/platform/mods_ap/greybus1/*/*/display/display* notification 0660 root vendor_mod
+/sys/devices/platform/mods_ap/greybus1/*/*/display/display* state 0660 root mot_mod
+/sys/devices/platform/mods_ap/greybus1/*/*/display/display* config 0444 root mot_mod
+/sys/devices/platform/mods_ap/greybus1/*/*/display/display* notification 0660 root mot_mod
 
 # MOD light device
-/sys/devices/platform/mods_ap/greybus1/*/*/leds/mod_light*::backlight brightness 0660 root vendor_mod
+/sys/devices/platform/mods_ap/greybus1/*/*/leds/mod_light*::backlight brightness 0660 root mot_mod
 
 # IIO (dynamic sensors)
 /sys/devices/iio_sysfs_trigger/add_trigger          0220    system      system
@@ -446,26 +442,26 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/iio:device*                                    0600    system      system
 
 # RAW device
-/dev/gbraw*             0660   root   vendor_mod
-/dev/gbsys              0660   root   vendor_mod
+/dev/gbraw*             0660   root   mot_mod
+/dev/gbsys              0660   root   mot_mod
 
 # Audio device
-/sys/devices/platform/mods_codec.0 uevent 0660 root vendor_mod
-/sys/devices/platform/mods_codec.0/* uevent 0660 root vendor_mod
+/sys/devices/platform/mods_codec.0 uevent 0660 root mot_mod
+/sys/devices/platform/mods_codec.0/* uevent 0660 root mot_mod
 
 # MOD camera device
 /dev/mot_camera_ext*               0660   system     camera
 /sys/devices/virtual/video4linux/mot_camera_ext* open_mode 0660 system camera
-/sys/devices/virtual/video4linux/mot_camera_ext* uevent 0660 root vendor_mod
+/sys/devices/virtual/video4linux/mot_camera_ext* uevent 0660 root mot_mod
 /sys/devices/virtual/video4linux/video* open_mode 0660 system camera
-/sys/devices/virtual/video4linux/video* uevent 0660 root vendor_mod
+/sys/devices/virtual/video4linux/video* uevent 0660 root mot_mod
 
 # Trustonic TEE device
 /dev/mobicore             0600   system     system
 /dev/mobicore-user        0666   system     system
 
 # DTV
-/dev/isdbt     0660   vendor_dtv   vendor_dtv
+/dev/isdbt     0660   mot_dtv   mot_dtv
 
 #Egistec fingerprint
 /dev/esfp0		  0660   system     system

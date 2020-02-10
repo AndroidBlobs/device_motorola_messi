@@ -136,3 +136,15 @@ if [ $? -eq 0 ]; then
 fi
 unset model product
 
+# For non-user builds only check if Normal min free offset file is there and use
+# those values to override the default setting
+if [ "`getprop ro.build.type`" != "user" ]
+then
+	if [ -f /data/vendor/minFreeOff.txt ]
+	then
+		if [ -e /proc/sys/vm/min_free_normal_offset ]
+		then
+			echo -e `cat /data/vendor/minFreeOff.txt` > /proc/sys/vm/min_free_normal_offset
+		fi
+	fi
+fi
